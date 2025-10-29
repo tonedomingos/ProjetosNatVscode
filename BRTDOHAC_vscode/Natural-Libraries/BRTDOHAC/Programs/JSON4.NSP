@@ -1,0 +1,40 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* <Natural Source Header
+/** New Program JSON4.
+/**
+/** :author brtdo
+/* TODO Enter your code here
+
+
+** Example 'PAJSNEX4': PARSE JSON (with PATH and VALUE)
+**
+** Note: Definition of variable MYJSON needs TQMARK set to OFF.
+************************************************************************
+OPTIONS TQMARK=OFF          /* Translate quotation mark
+*
+DEFINE DATA LOCAL
+1 MYJSON      (A) DYNAMIC
+1 MYPATH      (A) DYNAMIC
+1 MYVALUE     (A) DYNAMIC
+END-DEFINE
+*
+COMPRESS '{'
+         '  "employee": {'
+         '    "@personnel-id": "30016315",'
+         '    "full-name": {'
+         '      "first-name": "RICHARD",'
+         '      "name": "FORDHAM"'
+         '    }'
+         '  }'
+         '}'
+INTO MYJSON LEAVING NO
+*
+PARSE JSON MYJSON INTO PATH MYPATH VALUE MYVALUE
+   DISPLAY (AL=39) MYPATH MYVALUE
+END-PARSE
+END
+
+
+

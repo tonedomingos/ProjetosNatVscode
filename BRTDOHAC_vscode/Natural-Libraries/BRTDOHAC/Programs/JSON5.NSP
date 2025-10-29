@@ -1,0 +1,49 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* <Natural Source Header
+/** New Program JSON5.
+/**
+/** :author brtdo
+/* TODO Enter your code here
+
+
+** Example 'PAJSNEX5': PARSE JSON (with GIVING and SUBCODE)
+**
+** Note: Definition of variable MYJSON needs TQMARK set to OFF.
+************************************************************************
+OPTIONS TQMARK=OFF          /* Translate quotation mark
+*
+DEFINE DATA LOCAL
+1 MYJSON      (A) DYNAMIC
+1 MYPATH      (A) DYNAMIC
+1 MYNAME      (A) DYNAMIC
+1 MYVALUE     (A) DYNAMIC
+1 MYGIVING    (I4)
+1 MYSUBCODE   (I4)
+END-DEFINE
+*
+* Produce Natural runtime error with incorrect JSON document
+*
+COMPRESS '{'
+         '  "employee": {'
+         '    "@personnel-id": "30016315",'
+         '    "full-name": {'
+         '      "first-name": "RICHARD",'
+         '      "FORDHAM"'     /* here the key 'name' is missing
+         '    }'
+         '  }'
+         '}'
+INTO MYJSON LEAVING NO
+*
+PARSE JSON MYJSON INTO PATH MYPATH NAME MYNAME VALUE MYVALUE
+                  GIVING MYGIVING SUBCODE MYSUBCODE
+   WRITE (AL=39) MYPATH
+END-PARSE
+*
+IF MYGIVING NE 0
+  WRITE / 'Error Number:'  MYGIVING 'Subcode:' MYSUBCODE
+END-IF
+END
+
+

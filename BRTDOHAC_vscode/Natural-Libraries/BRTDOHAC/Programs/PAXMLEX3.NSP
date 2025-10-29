@@ -1,0 +1,57 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* <Natural Source Header
+/** New Program PAXMLEX3.
+/**
+/** :author brtdo
+/* TODO Enter your code here
+** Example 'PAXMLEX3': PARSE XML (with PATH and VALUE)
+**
+************************************************************************
+DEFINE DATA LOCAL
+1 MYXML       (A) DYNAMIC
+1 MYPATH      (A) DYNAMIC
+1 MYVALUE     (A) DYNAMIC
+1 URI       (A/20) DYNAMIC
+1 PRE       (A/20) DYNAMIC
+END-DEFINE
+*
+COMPRESS '<?xml version="1.0"  ?>'
+  '<employee personnel-id="30016315" >'
+  '<full-name>'
+  '<!--this is just a comment-->'
+  '<first-name>RICHARD</first-name>'
+  '<name>FORDHAM</name>'
+  '</full-name>'
+  '</employee>'
+  INTO MYXML LEAVING NO
+*
+PARSE XML MYXML INTO PATH MYPATH VALUE MYVALUE
+  DISPLAY (AL=39) MYPATH MYVALUE
+END-PARSE
+****** using namespace
+WRITE *CODEPAGE
+RESET MYXML
+COMPRESS MYXML  '<?xml version="1.0" encoding="IBM01140" ?>'-
+  '<nat:employee nat:personnel-id="30016315"'-
+  ' xmlns:nat="http://namespaces.softwareag.com/natural/demo">'-
+  '<nat:full-Name>'-
+  '<nat:first-name>RICHARD</nat:first-name>'-
+  '<nat:name>FORDHAM</nat:name>'-
+  '</nat:full-Name>'-
+  '</nat:employee>' INTO MYXML LEAVING NO
+
+
+RESET MYPATH
+WRITE 'NORMALIZATION'
+PARSE XML MYXML INTO PATH MYPATH
+  PRINT MYPATH  (AL=70)
+  END-PARSE
+URI(1) := 'http://namespaces.softwareag.com/natural/demo'
+PRE(1) := 'nat:'
+*
+PARSE XML MYXML INTO PATH MYPATH NORMALIZE NAMESPACE URI(*) PREFIX PRE(*)
+  PRINT MYPATH
+ END-PARSE
+END

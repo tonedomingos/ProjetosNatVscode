@@ -1,0 +1,19 @@
+DEFINE DATA LOCAL
+/* >Natural Source Header 000000
+/* :Mode S
+/* :CP windows-1252
+/* <Natural Source Header
+/** New Local Data Area TESTLOC.
+/**
+/** :author brtdo
+/* TODO Enter your data definitions here
+/*( imported data fields from Data Definition Module EMPLOYEES
+1 EMPLOYEES  VIEW OF EMPLOYEES-DB177
+  2 PERSONNEL-ID (A8) /* CNNNNNNN
+  2 FIRST-NAME (A20) /* FIRST/CHRISTIAN NAME
+  2 MIDDLE-NAME (A20) /* SECOND/MIDDLE NAME
+  2 MAR-STAT (A1) /* M=MARRIED
+  2 SEX (A1)
+/*) imported data fields from Data Definition Module EMPLOYEES
+
+END-DEFINE

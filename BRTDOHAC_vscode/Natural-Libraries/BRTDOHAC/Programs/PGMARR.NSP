@@ -1,0 +1,17 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* <Natural Source Header
+/** New Program PGMARR.
+/**
+/** :author brtdo
+/* TODO Enter your code here
+DEFINE DATA LOCAL
+
+1 #ID (A010/00001:00010)
+1 #NAME (A020/00001:00010)
+1 #REGRA (A021)
+1 #REGRA1 (A015)
+END-DEFINE
+INPUT USING MAP 'MAPARR'
+END

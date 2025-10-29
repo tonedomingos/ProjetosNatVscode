@@ -1,0 +1,70 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* <Natural Source Header
+* MAP2: PROTOTYPE VERSION 820 --- CREATED BY ONE 9.3.1 ---
+* INPUT USING MAP 'XXXXXXXX'
+*     #TEST NAME(*)
+DEFINE DATA PARAMETER
+1 #TEST (A026)
+1 NAME (A021/00001:00006)
+END-DEFINE
+FORMAT PS=024 LS=080 ZP=OFF SG=OFF KD=OFF IP=OFF
+* MAP2: MAP PROFILES *****************************        410***********
+* .TTAAAMMOO   D I D I N D I D I        ?_)¬&:+(                       *
+* 024079        N0NNUCN             X        01 SYSPROF NR             *
+************************************************************************
+INPUT          (     IP=OFF                                           /*
+                                                                       )
+/
+/
+/
+/
+/
+/
+/
+/
+ 017T NAME (1) /*.99U021 A021 .
+      (AD=MDT )
+   /**A1000060000100001000010000100001100003002001000004000HV
+ 042T NAME (4) /*.99U021 A021 .
+      (AD=MDT )
+/
+ 017T NAME (2) /*.99U021 A021 .
+      (AD=MDT )
+ 042T NAME (5) /*.99U021 A021 .
+      (AD=MDT )
+/
+ 017T NAME (3) /*.99U021 A021 .
+      (AD=MDT )
+ 042T NAME (6) /*.99U021 A021 .
+      (AD=MDT )
+/
+/
+/
+/
+ 038T #TEST /*.99U026 A026 .
+      (AD=MDT )
+/
+/
+/
+/
+/
+/
+/
+ 006T 'REGRA1__'
+/
+/
+* MAP2: VALIDATION *****************************************************
+RULEVAR F00*PF-KEY
+INCDIC                                 ;
+IF *PF-KEY = 'PF1'
+  REINPUT
+  END-IF
+RULEVAR F00#TEST
+INCDIC                                 ;
+IF #TEST = 'TONE'
+   REINPUT 'SAG'
+ END-IF
+* MAP2: END OF MAP *****************************************************
+END

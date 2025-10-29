@@ -1,0 +1,61 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* <Natural Source Header
+* ----------------------------------------------------------------------
+* Generated from NFN XML TOOLKIT
+*
+*   'CXMLC0SE'
+*
+* DESCRIPTION
+*   XML serialize implementation for file:
+*   null
+*
+* Parameter Definition
+*
+* &1& '#XML_SERIALZE_OUTPUT'          /* XML Document
+* &2& '#CX'                           /* Counter Variable 1st Dimension
+* &3& '#CY'                           /* Counter Variable 2nd Dimension
+* &4& '#CZ'                           /* Counter Variable 3rd Dimension
+* ----------------------------------------------------------------------
+COMPRESS FULL &1&
+'<REG'
+'>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+'<hash_PERSONNEL-ID'
+'>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+REG.#PERSONNEL-ID
+'</hash_PERSONNEL-ID>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+'<hash_FIRST-NAME'
+'>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+REG.#FIRST-NAME
+'</hash_FIRST-NAME>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+'<hash_SEX'
+'>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+REG.#SEX
+'</hash_SEX>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+'<hash_BIRTH'
+'>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+REG.#BIRTH
+'</hash_BIRTH>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+'<hash_DEPT'
+'>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+REG.#DEPT
+'</hash_DEPT>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+'<hash_JOB-TITLE'
+'>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+REG.#JOB-TITLE
+'</hash_JOB-TITLE>' INTO &1& LEAVING NO
+COMPRESS FULL &1&
+'</REG>' INTO &1& LEAVING NO

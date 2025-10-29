@@ -1,0 +1,29 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* <Natural Source Header
+/** New Program DOWNLPC.
+/**
+/** :author brtdo
+/* TODO Enter your code here
+** Example 'PCDOEX2': DOWNLOAD PC FILE
+**
+** NOTE: Example requires that Natural Connection is installed.
+************************************************************************
+DEFINE DATA LOCAL
+01 PERS VIEW OF EMPLOYEES
+  02 PERSONNEL-ID
+  02 NAME
+  02 CITY
+01 CMD (A80)                                   /* Variable for transfer
+END-DEFINE                                      /* of the PC command
+*
+MOVE 'SET PCFILE 7 DOWN DATA PERS.NCD' TO CMD  /* PC command to define
+*
+DOWNLOAD PC FILE 6 COMMAND CMD                 /* Command download
+*
+FIND PERS WITH CITY = 'NEW YORK'               /* Data selection
+  DOWNLOAD PC FILE 7 CITY NAME PERSONNEL-ID    /* Data download
+END-FIND
+
+END

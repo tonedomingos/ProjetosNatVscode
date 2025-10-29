@@ -1,0 +1,78 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* <Natural Source Header
+* ----------------------------------------------------------------------
+* Generated from NATURAL XML TOOLKIT
+*
+*         'CCXMLC0I'
+*
+* DESCRIPTION
+*               XML Parser implementation for file:
+*   null
+*
+* Parameter Definition
+*
+* &1& "XML_PARSER_XPATH"              /* XPATH to repesent element...
+* &2& "XML_PARSER_XPATH_TYPE"         /* Type of the XPATH:
+*                                        ? Processing instruction
+*                                        D DOCTYPE
+*                                        ! Comment
+*                                        C CDATA section
+*                                        T Starting Tag
+*                                        @ Attribute
+*                                        / Close Tag
+*                                        $ Parsed Data
+* &3& "XML_PARSER_CONTENT"            /* Content of founld element
+* &4& "XML_PARSER_CONTENT_IS_EMPTY"   /* Is TRUE if Content is empty
+* &5& "#CX"                           /* Counter variable 1st dimension
+* &6& "#CY"                           /* Counter variable 2nd dimension
+* &7& "#CZ"                           /* Counter variable 3rd dimension
+* &8& "#XML_PARSER_NAME"              /* Name of the parsed entity
+* &9& "#XML_PREV_PARSE-TYPE"          /* Previous type of the XPATH
+* ----------------------------------------------------------------------
+DECIDE ON FIRST &1&
+VALUE 'REG//'
+  IGNORE
+VALUE 'REG'
+  RESET INITIAL REG
+VALUE 'REG/hash_PERSONNEL-ID//'
+  IGNORE
+VALUE 'REG/hash_PERSONNEL-ID'
+  IGNORE
+VALUE 'REG/hash_PERSONNEL-ID/$'
+  REG.#PERSONNEL-ID := &3&
+VALUE 'REG/hash_FIRST-NAME//'
+  IGNORE
+VALUE 'REG/hash_FIRST-NAME'
+  IGNORE
+VALUE 'REG/hash_FIRST-NAME/$'
+  REG.#FIRST-NAME := &3&
+VALUE 'REG/hash_SEX//'
+  IGNORE
+VALUE 'REG/hash_SEX'
+  IGNORE
+VALUE 'REG/hash_SEX/$'
+  REG.#SEX := &3&
+VALUE 'REG/hash_BIRTH//'
+  IGNORE
+VALUE 'REG/hash_BIRTH'
+  IGNORE
+VALUE 'REG/hash_BIRTH/$'
+  MOVE EDITED &3& TO
+    REG.#BIRTH (EM=YYYY-MM-DD)
+VALUE 'REG/hash_DEPT//'
+  IGNORE
+VALUE 'REG/hash_DEPT'
+  IGNORE
+VALUE 'REG/hash_DEPT/$'
+  REG.#DEPT := &3&
+VALUE 'REG/hash_JOB-TITLE//'
+  IGNORE
+VALUE 'REG/hash_JOB-TITLE'
+  IGNORE
+VALUE 'REG/hash_JOB-TITLE/$'
+  REG.#JOB-TITLE := &3&
+NONE
+  IGNORE
+END-DECIDE

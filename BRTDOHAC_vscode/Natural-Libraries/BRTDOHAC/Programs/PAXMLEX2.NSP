@@ -1,0 +1,32 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP windows-1252
+* <Natural Source Header
+/** New Program PAXMLEX2.
+/**
+/** :author brtdo
+/* TODO Enter your code here
+** Example 'PAXMLEX2': PARSE XML (with PATH and NAME)
+**
+************************************************************************
+DEFINE DATA LOCAL
+1 MYXML       (A) DYNAMIC
+1 MYPATH      (A) DYNAMIC
+1 MYNAME      (A) DYNAMIC
+END-DEFINE
+*
+COMPRESS '<?xml version="1.0"  ?>'
+         '<employee personnel-id="30016315" >'
+         '<full-name>'
+         '<!--this is just a comment-->'
+         '<first-name>RICHARD</first-name>'
+         '<name>FORDHAM</name>'
+         '</full-name>'
+         '</employee>'
+INTO MYXML LEAVING NO
+*
+PARSE XML MYXML INTO PATH MYPATH NAME MYNAME
+   DISPLAY (AL=39) MYPATH MYNAME
+END-PARSE
+END
+

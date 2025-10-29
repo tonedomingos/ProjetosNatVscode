@@ -1,0 +1,16 @@
+DEFINE DATA LOCAL
+/* >Natural Source Header 000000
+/* :Mode S
+/* :CP windows-1252
+/* <Natural Source Header
+/** New Local Data Area
+
+
+1 REG
+  2 #PERSONNEL-ID (A8) /* CNNNNNNN
+  2 #FIRST-NAME (A20) /* FIRST/CHRISTIAN NAME
+  2 #SEX (A1)
+  2 #BIRTH (D)   /* BIRTH-DATE (YYYY-MM-DD)
+  2 #DEPT (A6) /* DDDDSS
+  2 #JOB-TITLE (A25)
+END-DEFINE
