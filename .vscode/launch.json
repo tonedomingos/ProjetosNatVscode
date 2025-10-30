@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "NatDebugDefault",
+            "type": "natdebug",
+            "request": "launch",
+            "program": "${file}",
+            "stopOnEntry": true,
+            "ndvHost": "localhost",
+            "ndvPort": 2700,
+            "sessionParameters": "WEBIO=ON",
+            "parameter": "",
+            "user": "BRTDO",
+            "passwordRequired": false,
+            "password": "${command:extension.handlePassword}",
+            "passwordInput": false,
+            "ssl": false,
+            "sslPassword": "${command:extension.handleSslPassword}",
+            "sslPasswordInput": false,
+            "workspaceRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "NatAttachDefault",
+            "type": "natdebug",
+            "request": "attach",
+            "program": "${file}",
+            "clientID": "VSCODE",
+            "ssl": false,
+            "sslPassword": "${command:extension.handleSslPassword}",
+            "sslPasswordInput": false,
+            "workspaceRoot": "${workspaceFolder}"
+        }
+    ]
+}

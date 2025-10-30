@@ -8,7 +8,7 @@ DEFINE DATA LOCAL
 /** :author brtdo
 /* TODO Enter your data definitions here
 /*( imported data fields from Data Definition Module EMPLOYEES
-1 EMPLOYEES  VIEW OF EMPLOYEES-DB177
+1 EMPLOYEES  VIEW OF EMPLOYEES 
   2 PERSONNEL-ID (A8) /* CNNNNNNN
   2 FIRST-NAME (A20) /* FIRST/CHRISTIAN NAME
   2 MIDDLE-NAME (A20) /* SECOND/MIDDLE NAME
